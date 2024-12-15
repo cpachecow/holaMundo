@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer HTML</title>
+    <style>
+        table, th, td {
+            border: 1px grey solid;
+        }
+    </style>
+</head>
+<body>
+    <h4>Introducción</h4>
+    <!-- Introducción -->
+    Al crear un archivo HTML en blanco con VS Code, se puede crear código de estructura básica con el 
+    símbolo de exclamación más la tecla TAB, genera código HTML.<br><br>
+
+    La etiqueta de "!DOCTYPE html" indca a los exploradores qué la página que se está abriendo corresponde a HTML5.<br><br>
+
+    La etiqueta HEAD indica el contenido de la cabecera<br><br>
+
+    La etiqueta TITLE tendrá el título de cada página web.<br><br>
+
+    La etiqueta BODY mostrará el contenido de la pagina<br><br>
+
+    <h4>Títulos o Headings</h4>
+    <!-- Título o Headings -->
+    <h1>Heading h1</h1>
+    La etiqueta heading h1, sirve para entergar un título al contenido que viene despúes de este.<br><br>
+    <h2>Heading h2</h2>
+    La etiqueta heading h2, sirve para entergar un subtítulo al contenido que viene despúes de este.<br><br>
+    <h3>Heading h3</h3>
+    La etiqueta heading h3, sirve para entergar un subtítulo del subtítulo anterior<br><br>
+    <h4>Heading h4</h4>
+    La etiqueta heading h4, sirve para entergar un subtítulo del subtítulo anterior<br><br>
+    <h5>Heading h5</h5>
+    La etiqueta heading h5, sirve para entergar un subtítulo del subtítulo anterior<br><br>
+    <h6>Heading h6</h6>
+    La etiqueta heading h6, sirve para entergar un subtítulo del subtítulo anterior<br><br>
+    
+    <h4>Párrafos</h4>
+    <!-- Párrafos -->
+    La etiqueta de párrafo 'p', sirve para escribir texto.
+    <p>Hola mundo este es un párrafo</p>
+    <p>Este es otro párrafo</p>
+
+    <h4>Separador</h4>
+    <!-- Separador -->
+    La etiqueta 'hr' sirve como separador del contenido, mostrando una línea. <br><br>
+    <hr>
+
+    <h4>Comentarios</h4>
+    <!-- Comentarios -->
+    La etiqueta de comentario se escribe así < !-- comentario que no saldrá -- ><br><br>
+
+    <h4>Span</h4>
+    <!-- Span -->
+    La etiqueta span sirve para referenciar un texto dentro de otra etiqueta, para darle un estilo css
+    <p>Hola <span style="color: brown;">mundo</span>, quiero cafe!!!</p>
+    <br>
+    La etiqueta br sirve para realizar un salto de línea <br><br>
+
+    <h4>Hipervínculos</h4>
+    <!-- Hipervínculos -->
+    La etiqueta de hipervínculo o link "a href" sirve para hacia alguna página o link dentro del sitio web.
+    <a href="https://www.google.cl" target="_blank">Ir a Google</a><br><br>
+
+    <h4>Imágenes</h4>
+    <!-- Imágenes -->
+    La etiqueta img muestra una imagen que puede ser una ruta o un archivo en el proyecto. <br>
+    <img src="img/lake.jpg" alt="que lindo el lago" width="250"><br><br>
+
+    <h4>Formularios</h4>
+    <!-- formularios -->
+    La etiqueta de 'form' se refiere a recolpilar información que rellene un usuario. <br><br>
+    &nbsp;&nbsp;La sub etiqueta 'label' indicará el texto que acompañará al input de información que ingrese el usuario. Para que el foco del 'label' nombre se vaya hacia el 'input' debe contener un nombre 'for = nombre'<br><br>
+    &nbsp;&nbsp;La sub etiqueta 'input', que por defecto es de type 'text'. Como el label tiene un identificador llamado 'nombre' este debe contener un 'id = nombre', para que estén enlazados. <br><br>
+    &nbsp;&nbsp;&nbsp;La propiedad 'name', de 'input, 'sirve como identificador cuando se envíe la información hacia un servidor. La cual contiene una llave y un valor, la llave es como se llame 'name=nonbre1' y el valor, es lo que ingrese el usuario en el input. <br><br>
+    &nbsp;&nbsp;&nbsp;La propiedad 'placeholder', de 'input, indica una pista al usuario de qué debe ingresar. Por ejemplo 'primer nombre'. <br><br>
+    &nbsp;&nbsp;&nbsp;La propiedad 'type', de 'input, indica cómo se va a comportar. Por ejemplo 'type=submit', 'type=submit','type=email','type=password','type=radio','type=checkbox','type=file'. <br><br>
+    &nbsp;&nbsp;&nbsp;La propiedad 'textarea', de 'input, indica un caja redimensionable para ingresar comentarios. Se puede agregar sub propiedades como 'rows' y 'cols'<br><br>
+    &nbsp;&nbsp;&nbsp;La propiedad 'submit', de 'input, agrega un botón que enviará todo el contenido del formulario hacia algún destino preconfigurado en la etiqueta 'form'. <br><br>
+    &nbsp;&nbsp;&nbsp;La propiedad 'value', de 'input, agrega un valor por defecto. Por ejemplo 'value="Cristian"'. Para los textarea se debe agregar el 'valor por defecto' entre las etiquetas de text area, no funciona con 'value="algun texto"'. <br><br>
+    &nbsp; * Para que el 'form' pueda enviar la data contenida un 'action' que indicará un archivo o link de destino y el método 'metohd' que se enviará dicha info. <br><br>
+    &nbsp;&nbsp;El método GET: Envía la infomación en el link indicado en 'action' agregando el 'name' de cada 'input' y su valor asociado. Tiene un máximo de 255 caracteres cómo limite de largo.<br><br>
+    &nbsp;&nbsp;El método POST: Envía la información en la cabecera del link en el link indicado en 'action'. Aparentemente no se ve dicha data, pero en un navegador al 'inspeccionar' dicha página y vamos a 'red' o 'network', seleccionamos el formulario y se podrá ver la infomación enviada.<br><br>
+    &nbsp;&nbsp;Por si solos ambos métodos no son seguros, por lo tanto tendrán que enviarse de forma encriptada. <br><br>
+    &nbsp;&nbsp;La sub etiqueta 'button' crea un boton que puede ser el tipo 'type="button"', 'type="reset"', 'type="submit"'. <br>
+    &nbsp;&nbsp;&nbsp;- 'type="button"': Es un botón que se puede agregar propiedades con Javascript. <br>
+    &nbsp;&nbsp;&nbsp;- 'type="reset"': Reinicia el formulario a sus valores por defecto. <br>
+    &nbsp;&nbsp;&nbsp;- 'type="submit"': Se comporta como el 'input' con la propiedad 'submit', pero tiene más opciones. <br>
+    &nbsp;&nbsp;&nbsp;- A cada boton de puede agregar una imágen entre las etiquedas 'button', se agrega la etiqueta 'img' añadiendo la propiedad 'src', que indica dónde estará la img que quiero agregar. <br><br>
+    
+    <form action="/formulario" method="post">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nonbre1" value="Cristian" placeholder="primer nombre"><br>
+        <label for="apellido">Apellido</label>
+        <input value="Pacheco" type="text" id="apellido" name="apellido1" placeholder="primer apellido"><br>
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" name="pass1" placeholder="contraseña"><br>
+        <label for="comentario">Comentario</label><br>
+        <textarea name="comentario" id="comentario">comentario llendo por defecto</textarea><br>
+        <input type="submit"/><br><br>
+        <button type="button">tipo boton</button>
+        <button type="reset"><img src="img/buttons/reset_01.png" width="20"></button>
+        <button type="submit">tipo Submit</button>
+    </form>
+    <br><br>
+
+    <!-- Listas -->
+    <h4>Listas</h4>
+    La etiqueta lista <br><br>
+    - Para crear la lista no ordenada se utiliza 'ul' y los elementos dentro de la lista con 'li' (significa 'list item' o ítem de la lista).
+     <!-- ul es una lista no ordenada -->
+    <ul>
+        <!-- li son los elementos de la lista -->
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    - Para crear una lista ordenada, en vez de puntos salgan números se utiliza 'ol' y los elementos de la lista con 'li'. <br>
+    &nbsp;Se puede agregar una propiedad 'value="20"' en una lista ordenada, que indicará desde qué numero iniciar la lista. <br>
+    &nbsp;Esto se agrega al primer valor de la lista.
+     
+    <!-- ul es una lista ordenada u ordered list -->
+    <ol>
+        <li value="20">Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+    - Para anidar listas dentro de un 'li' se sebe crear una nueva lista, por ejemplo ordenada 'ol' con sus respectistos subelementos 'li'. <br>
+    <!-- Ejemplo lista anidada -->
+    &nbsp;A la lista anidada, se puede agregar un estilo para que parezca más un sub índice (ejemplo números romanos). Se agrega la propiedad 'style="list-style-type:lower-roman"' a la 'ol' anidada y todos sus elementos adquieren dicho valor.
+    <ol>
+        <li >Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3
+            <ol style="list-style-type:lower-roman">
+                <li>Sub elemento 1</li>
+                <li>Sub elemento 2</li>
+                <li>Sub elemento 3</li>
+            </ol>
+        </li>
+        <li>Elemento 4</li>
+    </ol>
+    <!-- Tablas -->
+    <h4>Tablas</h4>
+    - Las tablas se inician con la etiqueta 'table', seguido de 'tr' que significa 'table row' o fila de la tabla. <br><br>
+    &nbsp;&nbsp;- Para identificar la cabecera de la tabla se utiliza la etiqueta 'th' (table head), automaticamente de la un estilo para diferenciar del contenido de la tabla. Por defecto las cabeceras están alineas al centro.<br><br>
+    &nbsp;&nbsp;- En otra fila 'tr' se pueden ir agregando la data asociada a la cabecera, agregando la etiqueta 'td' que significa 'table data'. Se agregan tantos 'td' como cabeceras 'th' hay.<br>
+    &nbsp;&nbsp;- Por defecto la alineación de las filas posteriores a 'th' es hacia la izquierda, la cual puede ser modificada en cada fila 'tr' agregando la propiedad 'style="text-align: center;"'<br><br>
+    <table>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad disponible</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>Piolet Grivel 70 cm</td>
+            <td>20 un</td>
+            <td>$ 230.000 c/u</td>
+        </tr>
+        <tr style="text-align: center;">
+            <td>Cuerda 100 mt</td>
+            <td>3 un</td>
+            <td>$ 150.000 c/u</td>
+        </tr>
+        <tr>
+            <td>Descendedor ocho Mammut</td>
+            <td>4 un</td>
+            <td>$ 23.000 c/u</td>
+        </tr>    
+    </table>
+    <br>
+    &nbsp;&nbsp; - En una nueva tabla se puede dar un estilo de borde con la propiedad 'style', por ejemplo 'style="border: 1px grey solid"'. <br><br>
+    <table style="border: 1px grey solid">
+        <tr>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Tamara</td>
+            <td>Femenino</td>
+            <td>43</td>
+        </tr>
+    </table>
+    <br><br>
+    &nbsp;&nbsp; - Para añadir el mismo estilo a cada tabla de una página, en la etiqueta 'head' se debe agregar la etiqueta 'style' indicando que 'table' 'th' y 'td' tendran 'border: 1px grey solid;' entre llaves. <br>
+    &nbsp;&nbsp; Con esto todas las tablas tendran el mismo estilo. <br><br>
+    
+    &nbsp;&nbsp; - En una nueva tabla se puede añadir la propiedad de ancho, con el comando 'style="width: 500px;"' <br><br>
+    <table style="width: 500px;">
+        <tr>
+            <th>Película</th>
+            <th>Tipo</th>
+            <th>Duración</th>
+        </tr>
+        <tr>
+            <td>El señor de los anillos</td>
+            <td>aventura</td>
+            <td>2 horas</td>
+        </tr>
+        <tr>
+            <td>Las dos torres</td>
+            <td>aventura</td>
+            <td>2 horas con 30 minutos</td>
+        </tr>
+        <tr>
+            <td>El retorno del rey</td>
+            <td>aventura</td>
+            <td>3 horas</td>
+        </tr>
+    </table>
+    <br><br>
+    &nbsp;&nbsp; - Para que los navegadores puedan identificar las partes de una tabla se puede añadir 'thead' para la cabecera de la tabla, 'tbody' para el cuerpo de la tabla y 'tfoot' para el pie o footer de la tabla. <br><br>
+    <table style="width: 600px;">        
+        <thead>
+        <!--Cabecera de la tabla-->
+            <tr>
+                <th>Deporte</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <!--Cuerpo de la tabla-->
+            <tr>
+                <td>Futbol</td>
+                <td>Juego con un balón y 11 jugadores por lado.</td>
+            </tr>
+            <tr>
+                <td>Tenis</td>
+                <td>Juego con una pelota y 2 a 4 jugadores por lado.</td>
+            </tr>
+            <tr>
+                <td>Badminton</td>
+                <td>Juego con una pelota con pluma y 1 a 2 jugadores por lado.</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        <!--Pie de la tabla-->
+            <td>Pie de</td>
+            <td>la tabla</td>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explicación teórica del blog</title>
+</head>
+<body>
+    <p>
+        El blog creado en la página llamada <a href="blog.html">blog.html</a>, fue creado con la siguiente estructura en el body:
+        <ul>
+            <li>Etiqueta 'header': Será la cabecera de la página, la cual puede tener un título, imagenes, etc.</li> <br>
+            
+            <li>Etiqueta 'section': Será donde estará el contenido del blog, con todos sus posteos</li><br>
+                <ol style="list-style-type: lower-roman;">
+                    <li>Sub etiqueta 'article': Tiene el contenido de un posteo, la cual puede tener texto, imagenes, subtítulos, etc. Se agregó tantos 'article' como posteos publicados, en este caso tres.</li>
+                </ol>
+                <br>
+            <li>Etiqueta 'footer': Será el pie de página, la cual puede contener teléfono de contacto, copyright, email, link para moverse hacia la parte superior de la página, etc.</li>
+        </ul>
+    </p>
+    <p>
+        Este blog no tiene estilos, dado que el html es el encargado de darle una estructura a la página, y CSS es el reponsable de dar los estilos a cada parte del código html.
+    </p>
+    <p>
+        La etiqueta 'Div' es utilizada para dividir nuestro contenido y para agruparlo en secciones. Antiguamente se utilizaban bastante, dado que ahora se utilizan las etiquetas de 'section' y 'article'.
+        Es una mala práctica es utilizar etiquetas de div anidadas.
+    </p>
+    <div>
+        <p>
+            "Esto es el texto de un párrafo dentro de un div"
+        </p>
+    </div>
+    <p>
+        Atributos 'id' y 'class':
+        <ul>
+            <li>'id': Atributo para interactuar con estos elementos con Javascript o para asignarle un estilo. El valor debe ser único para cada etiqueta, para evitar confusiones o errores. <br>
+            - Como ejemplo se añadió el atributo 'id="titulo"' en el header al título del blog, e 'id="footer"' al footer de la página.
+            </li> 
+            <br>
+            <li>'class': Atributo que sirve para identificar más de un elemento que se puede seleccionar con CSS o Javascript, con selectores.</li>
+            - Como ejemplo se añadió el atributo 'class="post"' a cada 'article' creado, eso es a cada post realizado. Para poderlos seleccionar para dar un estilo en particular.
+        </ul>
+    </p>
+    <p>
+        Por último en el footer y en header se añadió una etiqueta 'anchor' o link especial, que permite navegar dentro de la mísma página, el cual tiene el siguiente formato:<br>
+        'href="#nombre_id"', esto implica que al clickear en el texto de ese link, se podrá ir directamente a la sección indicada, según el atributo 'id' mencionado anteriormente.
+    </p>
+    <br><br>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* estilo un título h1 con la propiedad id="titulo" */
+#titulo {
+    color: tomato;
+}
+
+/* estilo de párrafo con la clase class="texto" */
+p.texto {
+    color: slateblue;
+}
+
+/* estilo de párrafo con la clase class="actual" */
+p.actual {
+    color: mediumseagreen;
+}
+
+/* estilo de párrafo para un div */
+div p {
+    color: firebrick;
+}
+
+/* estilos de los títulos h2 y h3 para un div */
+div h2, div h3 {
+    color: rgb(138, 161, 5);
+}
+
+/* selector universal */
+* {
+    font-size: 24px;
+    /* color:chocolate; */
+}
+
+/* estilo de título h3 con la clase class="titulo3" */
+h3.titulo3{
+    color: rgb(50,70,70)
+}
+
+/*estilo de un párrafo con bordes*/
+p.borde {
+    border: 1px black dashed;
+    /*
+        Hay distintos tipos de diseños de borde
+        - dotted
+        - dashed
+        - solid
+        - double
+        - groove
+        - ridge
+        - inset
+        - outset
+        - none
+        - hidden
+    */
+    color: blueviolet; /* color del texto*/
+
+}
+p.borde2 {
+    border-style: solid;
+    border-color: blue;
+    border-radius: 5px; /* borde redondeado */
+    border-width: 3px;
+}
+p.borde_cm {
+    border-style: solid;
+    border-width: 1cm;
+}
+p.borde_mm {
+    border-style: solid;
+    border-width: 1mm;
+}
+p.borde_in {
+    border-style: solid;
+    border-width: 1in;    
+}
+p.borde_pt {
+    border-style: solid;
+    border-width: 1pt;
+}
+p.borde_pc {
+    border-style: solid;
+    border-width: 1pc;
+}
+#fondo{
+    font-size: 26px;
+    color: black;
+    background-color: rgb(226, 74, 74);
+
+}
+#fondo2{
+    font-size: 26px;
+    color: rgb(188, 195, 255);
+    height: 300px;
+    background-image: url('../img/matrix.jpg');
+    background-size: contain;
+
+}
+.margen {
+    background-color: chocolate;
+    color:rgb(255, 255, 255);
+    margin: 15px 20px 25px 30px;
+    padding: 30px 25px 20px 15px;
+    border: solid 1pt black;
+    height: 100px;
+    width: 30px;
+    overflow: scroll;
+    outline: 1px solid red;
+}
+.text{
+    text-align: center;
+    text-decoration: overline;
+    text-shadow: 3px 5px 6px blue;
+    font-family: 'Pacifico', cursive, sans-serif;
+    color: black;
+}
+a:link {
+    color:blueviolet;
+}
+a:visited{
+    color: grey;
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color:darkgreen;
+}
+ul {
+    background-color: aqua;
+    list-style-type: lower-roman;
+}
+
+/* Estilo a la tabla, la segunda propiedad es para eliminar los bordes dobles creados por defecto */
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Estilo de celdas de título y contenido */
+th, td { 
+    border: solid 1px #eee;
+    padding: 5px;
+}
+/* Estilo específico a la cabecera */
+th {
+    background-color: tomato;
+    color: white;
+    text-align: left;
+}
+/* Estilo de colorear las filas impares, para que se pueda leer de mejor forma la tabla. */
+tr:nth-child(even){
+    background-color:rgb(194, 194, 243);
+}
+/* Estilo que cambiará el color de la fila completa cuando el mouse pase por esta */
+tr:hover {
+    background-color: #daeea3;
+    cursor: pointer;
+}
+span {
+    /* display: block; */
+    display:none;
+    /* visibility: hidden; */
+}
+.inline {
+    display: inline
+}
+span.width {
+    display: block;
+    width: 500px;
+    background-color: blue;
+}
+span.max-width {
+    display: block;
+    max-width: 500px;
+    background-color:crimson;
+}
+#position {
+    position: relative;
+    left: 20px;
+}
+#fixed {
+    position:fixed;
+    left: 20px;
+    top: 25px;
+    background-color: aquamarine;
+    font-size: 15px;
+    display: none;
+}
+/* #absolute {
+    position: absolute;
+    left: 20px;
+} */
+#sticky {
+    position: sticky;
+    left: 20px;
+    top: 25px
+}
+
+.inline-block {
+    display: inline-block;
+    height: 55px;
+    background-color: chocolate;
+}
+
+.centerHorizontal {
+    width: 200px;
+    margin: 0 auto; /* 0 para que no aparezca centrado verticalmente y auto para centrar horizontalmente */
+    background-color: aquamarine;
+    text-align: center; /* con esto centra el texto*/
+}
+.centerVertical {
+    padding: 50px 0;
+    width: 200px;
+    margin: 0 auto; /*0 para que no aparezca centrado verticalmente y auto para centrar horizontalmente*/
+    background-color:burlywood;
+    text-align: center; /* con esto centra el texto*/
+}
+.left {
+    float: left;
+    width: 220px;
+    border-style: solid;
+    border-width: 1px;
+}
+.right {
+    float: right;
+    /* width: 220px; */
+    border-style: solid;
+    border-width: 1px;
+}
+.container{
+    height: 250px;
+}
+.leftImg{
+    float:left;
+    width: 200px;
+    height: 150px;
+}
+.column{
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    margin: 0px 20px;
+    padding: 10px 10px;
+    /* width: 30px; */
+    text-align: center;
+    background-color: #daeea3;
+}

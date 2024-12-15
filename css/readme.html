@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Curso CSS Academia HolaMundo</title>
+</head>
+<body>
+    <p>
+        <h2 id="indice">Índice</h2>
+        <table>
+            <tr>
+                <td>
+                    <ol>
+                        <li value="1"><a href="#que_es_css">Qué es CSS</a></li>
+                        <li><a href="#selectores">Selectores</a></li>
+                        <li><a href="#comentarios">Comentarios</a></li>
+                        <li><a href="#colores">Colores</a></li>
+                        <li><a href="#bordes">Bordes</a></li>
+                        <li><a href="#unidades_med">Unidades de medida</a></li>
+                        <li><a href="#background">Background</a></li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li value="8"><a href="#box_model">Box model</a></li>
+                        <li><a href="#outline">Outline y textos</a></li>
+                        <li><a href="#links">Links</a></li>
+                        <li><a href="#tablas">Tablas</a></li>
+                        <li><a href="#display">Display</a></li>
+                        <li><a href="#inline_block">Inline block</a></li>
+                        <li><a href="#float">Float</a></li>
+                        <li><a href="#id_class">¿Cuándo usar 'Id' o 'Class'?</a></li>
+                    </ol>
+                    
+                </td>
+            </tr>
+        </table>
+    </p>
+    <p>
+        <h3 id="que_es_css">Qué es CSS?</h3>
+        - Significa Cascading Style Sheet. Entrega el estilo de una página HTML y funciona a través de selectores, tomando el o los elementos de una pagina web y puede brindar un estilo puntual o general. <br><br>
+        - Ver página web de <a href="https://bootswatch.com" target="_blank">Bootsawtch</a> para ver ejemplos de CSS. <br><br>
+        
+        Hay tres formas de incluir un estilo tipo CSS:
+        <ol>
+            <li>Agregarlo en una o más etiquetas del archivo html.</li>
+            <li>Agregar los estilos directamente desde la cabecera de la página agregando la etiqueta 'style', indicando qué etiquetas tendran un estilo.</li>
+            <li>
+                Agregar los estilos desde un archivo '.css' específico.<br>
+                Esto se realiza en la etiqueta de 'cabecera' o 'head' de la página, debajo se title se agrega lo siguiente: <br>
+                < link rel="stylesheet" href="css/styles.css"/ >. En donde 'rel' indica qué es lo que se está llamando y 'href' indica la ruta del archivo css.
+            </li>
+        </ol>
+        La formas 1 y 2 no se recomiendan dado que la mejor manera es incluir uno o más archivos css, para dar el estilo necesario al archivo html.
+    </p>
+    <p>
+        Se creará una página web <a href="index.html" target="_blank">index.html</a> que tendrá los primeros ejemplos de como agregar estilo mediante un archivo css, como se indica en el punto tres.
+    </p>
+    <p>
+        <ul>
+            <li>Una vez creado el archivo html index, se agregará en la etiqueta 'head' < link rel="stylesheet" href="css/styles.css"/ >, asociando al archivo styles.css a index.</li> <br>
+            <li>Dentro de la etiqueta 'body' agregará un título 'h1' que dirá 'Título Hola Mundo!!!'</li><br>
+            <li>
+                Se creará un archivo 'styles.css' dentro de la carpeta 'css'; se generará el primer estilo asociado a la etiqueta 'body': <br>
+                body { <br>
+                    color: tomato;<br>
+                }<br>
+                Esto hará que todo el contenido del body tenga dicho color.
+            </li>
+        </ul>
+        
+    </p>
+    <p>
+        <h4 id="selectores">Selectores</h4><h5><a href="#indice">inicio</a></h5>
+        Son los identificadores que se utilizarán en las etiquetas html, para que en css puedan ser seleccionados y posteriormente darle un estilo.
+        <ul>
+            <li>Al título 'h1', creado anteriormente, se agregará una propiedad llamada 'id="titulo"', adicionalmente se creará tres párrafos con la propiedad 'class="parrafo"'. <br>
+                En el archivo css para darle el estilo al título 'h1', se puede hacer de dos formas principalmente: <br><br>
+
+                h1 { <br>
+                    color: tomato;<br>
+                }<br><br>
+                ó agregar '#titulo' que corresponde un elemento con la propiedad 'titulo': <br><br>
+                #titulo{ <br>
+                    color: tomato;<br>
+                }<br><br>
+            </li>
+            <li>
+                Para seleccionar un 'párrafo' podemos darle estilo de tres formas principalmente:<br><br>
+                
+                - La primera da el estilo a todos los párrafos de dicha página. <br><br>
+
+                p{ <br>
+                    color: slateblue;<br>
+                }<br><br>
+                - La segunda forma es agregar el selector de clase, para escribirlo en css se debe agregar un punto '.' seguido de el nombre de la clase, para este ejemplo sería '.texto':<br><br>
+                
+                Para todos los párrafos que contengan la clase id="texto" tendrán este estilo. <br><br>
+                
+                .texto{ <br>
+                    color: slateblue;<br>
+                }<br><br>
+                - La tercera forma es muy similar a la anterior, se debe agregar, en css, 'p.texto':<br><br>
+                
+                Para todos los párrafos que contengan la clase id="texto" tendrán este estilo. <br><br>
+                
+                p.texto{ <br>
+                    color: slateblue;<br>
+                }<br><br>
+
+                En html hay tres párrafos con los siguientes id: <br>
+                &nbsp;< p class="texto">Esto es un párrafo cualquiera 1 < /p><br>
+                &nbsp;< p class="texto actual">Esto es un párrafo cualquiera 2 < /p><br>
+                &nbsp;< p class="actual">Esto es un párrafo cualquiera 3 < /p><br><br>
+
+                Por lo tanto el primer y segundo párrafo que contienen el "class=texto", tendrán el estilo indicado en el archivo css. Dado que el tercer párrafo tiene la propiedad 'class="actual"'. <br><br>
+
+                Ahora si agregamos un estilo css al párrafo con la clase 'class="actual"' : <br><br>
+                
+                p.actual{ <br>
+                    color: mediumseagreen;<br>
+                }<br><br>
+                
+                Lo que sucede en este caso es que los párrafos que tienen la clase 'class="actual"', tomaron el estilo y color según lo indicado en css. <br><br>
+
+                Por lo tanto es muy importante el orden de los estilos que se agregan en css, dado que para este caso tomó el segundo color de párrafo, dado que era el último estilo indicado con la clase 'actual'.
+            </li>
+            <li>
+                <p>
+                    Ahora se dará estilo a una etiqueta 'DIV' la cual tendrá un 'párrafo', un 'título h2' y otro 'título h3'. Por lo tanto en el html se creará un div con todo el contenido debajo de los párrafos anteriores: <br><br>
+                    
+                    < div> <br>
+                        < p>Párrafo en un div< /p><br>
+                        < h2>Título h2 en un div< /h2><br>
+                        < h3>Título h3 en un div< /h3><br>
+                    < /div><br><br>
+
+                    Para darle un estilo css a todos los párrafos contenidos en el 'DIV', agregar: <br><br>
+                    div p{ <br>
+                        color: firebrick;<br>
+                    }<br><br>
+
+                    Para darle un estilo css a todos los 'h2' contenidos en el 'DIV', agregar: <br><br>
+                    div h2{ <br>
+                        color: crimson;<br>
+                    }<br><br>
+
+                    El mismo paso puedo hacer para darle el estilo css a 'h3' contenido en el 'DIV'. <br><br>
+
+                    Se puede tambien dar el mismo estilo a los 'h2' y 'h3' contenidos de un 'DIV', agregando lo siguiente: <br><br>
+
+                    div h2, div h3{ <br>
+                        color: rgb(138, 161, 5)<br>
+                    }<br><br>
+
+                    Con esto ambas etiquetas obienen el mismo estilo css esperado.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Existe un selector universal ' * ' que le da el estilo a toda la pagina web, exceptuando los selectores que ya tienen un estilo definido. Por ejemplo, si hay selectores css con colores definidos, estos no cambiarán el estilo de ellos, pero si hay una etiqueta en html que no tenga un selector, tendrá el estilo del selector universal. <br>
+                    
+                    Para agregar el css del selector universal, puedo indicar un tamaño de fuente: <br><br>
+
+                    *{ <br>
+                        font-size: 24px;<br> 
+                    }<br><br>
+
+                    Como ningún selector anterior tenía un 'font-size' indicado, todos los textos tomaron el tamaño de fuente indicado en el selector universal. <br><br>
+
+                    Ahora si se agrega un color, los selectores anteriores conservarán su color definido: <br><br>
+                    
+                    *{ <br>
+                        font-size: 24px;<br> 
+                    }
+                </p>
+            </li>
+            <li>
+                <p>
+                    Por último si se agrega otro párrafo 'p' debajo de la etiqueta 'div' en html, sin un selector asociado, tomará el estilo indicado en el selector universal: <br><br>
+
+                    < p>Esto es un párrafo cualquiera 4, sin selectores< /p>
+                </p>
+            </li>
+        </ul>
+        <p><a href="#indice">Volver a inicio</a></p>        
+        <br>
+
+        <p>
+            <h4 id="comentarios">Comentarios en CSS</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                Los comentarios en css se realizan escibiendo: <br><br>/* texto tipo comentario en css */
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+
+        <p>
+            <h4 id="colores">Colores en CSS</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                Los colores en CSS pueden ser definitos de tres formas: 'hexagecimal', 'rgb' y 'hsl'.
+                <p>
+                    <ul>
+                        <li>
+                            Hexagecimal, tiene dos formatos; con 3 ó 6 caracteres (#000 ó #000000): <br><br>
+                            <ol>
+                                <li>#000 : representan la ausencia de todos los colores, el color negro. #fff : representa la mayor expresión del color, o sea color blanco.</li><br>
+                                <li>#000000 : representa el color negro, y #ffffff : representa el color blanco.</li><br>
+                            </ol>
+
+                        </li>
+                        <li>
+                            RGB, es muy similar al anterior salvo que se deben agregar valores del 0 al 255, con el siguiente formato: <br><br>
+
+                            rgb(0,0,0) = repesentando el color negro. <br><br>
+                            rgb(255,255,255) = repesentando el color blanco.
+
+                        </li>
+                        <br>
+                        En html se agrego un título h3, debajo del último párrafo, con la propiedad clase 'class=titulo3', por lo tanto para darle un estilo de color en css, se debe agregar: <br><br>
+                        
+                        h3.titulo3{ <br>
+                            color: rgb(50,70,70)<br> 
+                        }
+                        <p>
+                            Esto implica que para cualquier título 'h3' que tenga la clase 'class="titulo3"', tendrá el estilo indicado en dicho selector.
+                        </p>
+                    </ul>
+                    <p><a href="#indice">Volver a inicio</a></p>
+                </p>
+            </p>
+        
+        </p>
+        <p>
+            <h4 id="bordes">Bordes en CSS</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                Para añadir bordes a un párrafo 'p' en html, se agrega un 'selector' 'class="borde"', por ejemplo: <br><br>
+                " < p class="borde">Esto es un texto con bordes< /p> " <br><br>
+
+                Ahora en CSS hay que agregar el 'selector' 'borde' asociado al párrafo 'p', de la siguiente forma: <br><br>
+
+                p.borde{ <br>
+                    &nbsp;&nbsp;&nbsp;border: 5px black dashed;<br> 
+                    &nbsp;&nbsp;&nbsp;color: blueviolet; <br> 
+                }<br><br>
+
+                &nbsp;&nbsp;- '5px': indicará el grosor del borde. <br>
+                &nbsp;&nbsp;- 'black': será el color del borde. <br>
+                &nbsp;&nbsp;- 'dashed': significa que el borde tendrá un diseño interlineado. <br>
+                &nbsp;&nbsp;- 'color': indicará el color del texto al interior del borde. <br><br>
+
+                &nbsp;&nbsp;Adicionalmente hay más tipos de diseño de borde:
+
+                <table style="width: 300px;">
+                    <tr>
+                        <td>
+                            &nbsp;- dotted <br>
+                            &nbsp;- solid <br>
+                            &nbsp;- double <br>
+                            &nbsp;- groove <br>
+                            &nbsp;- ridge <br>
+                        </td>
+                        <td>                            
+                            &nbsp;- inset <br>
+                            &nbsp;- outset <br>
+                            &nbsp;- none <br>
+                            &nbsp;- hidden <br>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p>Otra opción de dar estilos de borde de un texto, es agregar en css de la siguiente forma:</p>
+                <p>
+                    p.border2{ <br>
+                    &nbsp;&nbsp;&nbsp;border-style: solid; <br>
+                    &nbsp;&nbsp;&nbsp;border-color: blue;<br>
+                    &nbsp;&nbsp;&nbsp;border-radius: 5px;<br>
+                    &nbsp;&nbsp;&nbsp;border-width: 5px;<br>
+                    }
+                </p>
+                <p>
+                    &nbsp;&nbsp;- 'border-radius': indica que será con bordes redondeados. <br>
+                    &nbsp;&nbsp;- 'border-width': indica el grosor del borde.
+                </p>
+                <p><a href="#indice">Volver a inicio</a></p>
+            </p>
+        </p>
+        <p>
+            <h4 id="unidades_med">Unidades de medida en CSS</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                Representación de dimensiones que pueden ser en pixeles, cm, mm, pulgadas (in), punto (pt que representa un 1/72 de pulgada), picas (pc, representan 12 puntos), em (representa la dimensión con respecto a un elemento en particular), rem (tamaño relativo al tamaño de la fuente del elemento raíz) entre otros. <br><br>
+                Cada dimensión seŕa relativa al tamaño de los dispositivos electrónicos, por lo tanto una unidad de medida no será exactamente "1 cm medido por regla". <br><br>
+                
+                Algunos ejemplos de unidades de medida aplicados a bordes                
+            </p>
+            
+            <table style="width: 400px; border: solid; border-color: #9c9c9c; border-width: 1pt;">
+                <tr>
+                    <td>
+                        <p>
+                            p.border_cm{ <br>
+                            &nbsp;&nbsp;&nbsp;border-width: 1cm;<br>
+                            }
+                        </p>
+                        <p>
+                            p.border_mm{ <br>
+                            &nbsp;&nbsp;&nbsp;border-width: 1mm;<br>
+                            }
+                        </p>
+                        <p>
+                            p.border_in{ <br>
+                            &nbsp;&nbsp;&nbsp;border-width: 1in;<br>
+                            }
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            p.border_pt{ <br>
+                            &nbsp;&nbsp;&nbsp;border-width: 1pt;<br>
+                            }
+                        </p>                            
+                        <p>
+                            p.border_pc{ <br>
+                            &nbsp;&nbsp;&nbsp;border-width: 1pc;<br>
+                            }
+                        </p> 
+                        <p>
+                            p.border_px{ <br>
+                            &nbsp;&nbsp;&nbsp;border-width: 1px;<br>
+                            }
+                        </p> 
+                    </td>
+                </tr>
+            </table>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            <h4 id="background">Background en CSS</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                Representa las propiedades de fondo que tendrá una etiqueta.
+            </p>
+            <p>
+                <table width="500px">
+                    <tr>
+                        <td>background-color: #fff;</td>
+                        <td>Representa el color que tendrá dicho fondo</td>
+                    </tr>
+                    <tr>
+                        <td>opacity: 0 a 1</td>
+                        <td>Indicará la transparencia del objeto, valores entre 0 y 1. Donde cero es sin opacidad y uno es máxima transparencia</td>
+                    </tr>
+                    <tr>
+                        <td>background-image: url('/images/casa.jpg')</td>
+                        <td>Indicará la imagen fondo</td>
+                    </tr>
+                    <tr>
+                        <td>background-size: auto;</td>
+                        <td>Indicará es tamaño de la imagen, auto (tamaño original de la img), cover (tamaño proporcional al tamaño del height), contain (contenerá la imagen al tamaño de la etiqueta), dimensiones (primer valor al ancho y el alto, 400px 300px )</td>
+                    </tr>
+                    <tr>
+                        <td>background-repeat: repeat-x, repeat-y, no-repeat</td>
+                        <td>Indicará si la imagen se repite horizontal, vertical o que no se repita.</td>
+                    </tr>
+                    <tr>
+                        <td>background-position: left, top;</td>
+                        <td>Indicará posición x,y de la imagen</td>
+                    </tr>
+                </table>
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            <h4 id="box_model">Box Model CSS </h4><h5><a href="#indice">inicio</a></h5></p>
+                
+                Se refiere a los espacios generados en una etiqueta de div o article, para que el texto contenido no esté pegado a dichas etiquetas.<br><br>
+                
+                Como ejemplo en html se creara una etiqueta div con un id='margen': <br><br>
+
+                < div class="margen"> asdasd  < /div> <br><br>
+
+                En css se realizará la siguiente configuración:             
+                                
+                <ul>
+                    <li> <b>Margin</b>: representa los espacios fuera del background del texto.
+                        <p>
+                            .margen { <br>
+                                &nbsp;&nbsp;&nbsp;background: color brown; <br>
+                                &nbsp;&nbsp;&nbsp;color:rgb(255, 255, 255); <br>
+                                &nbsp;&nbsp;&nbsp;margin: 15px 20px 25px 30px; espacio-> superior, derecha, inferior e izquierda <br>
+                            }
+                        </p>
+                        <p>
+                            Margin puede estar definido con un valor ('margin: 15px'), el cual indicará el mismo espacio superior, derecha, inferior e izquierda: <br> <br>
+                            
+                            Puede estar definido con dos valores ('margin: 15px, 20px'), el cual indicará el espacio vertical y horizontal. <br><br>
+
+                            Puede estar definido con tres valores ('margin: 15px, 20px, 5px'), el cual indicará el espacio superior, horizontal e inferior. <br><br>
+
+                            Esta misma configuración sirve para padding.
+                        </p>
+                    </li>
+                    <li><b>Padding</b>: representa los espacios dentro del background del texto.
+                        <p>
+                            .margen { <br>
+                                &nbsp;&nbsp;&nbsp;padding: 30px 25px 20px 15px; espacio-> superior, derecha, inferior e izquierda <br>
+                            }
+                        </p>
+                    </li>
+                    <li><b>Border</b>: representa el borde entre el margin y el padding.
+                        <p>
+                            .margen { <br>
+                                &nbsp;&nbsp;&nbsp;border: solid 1pt black; <br>
+                            }
+                        </p>
+                    </li>
+                    <li><b>Overflow</b>: representa la propiedad de desborde de un texto, contenido en una etiqueta. <br>
+                        - Por defecto tiene la propiedad 'visible', independiente del tamaño de la etiqueta. <br>
+                        - Con el valor 'hidden' corta el texto que se salga según el largo definido. <br>
+                        - Con el valor 'auto' o 'scroll' genera las barras para poder recorrer el contenido del texto, dentro de la dimensión de la etiqueta.
+                        <p>
+                            .margen { <br>
+                                &nbsp;&nbsp;&nbsp;height: 100px; <br>
+                                &nbsp;&nbsp;&nbsp;width: 30px; <br>
+                                &nbsp;&nbsp;&nbsp;overflow: scroll;
+                            }
+                        </p>
+                    </li>
+                </ul>
+                <p>Se utiliza las propiedades de margin, padding y overflow.</p>
+                <p><b>Box model:</b> es cómo se posiciona cada elemento HTML en nuestro documento. Toda etiqueta en HTML va a tener un margin, border, padding y el contenido. <br><br> Cuando se especifica la propiedad de width de un elemento, solo se especifíca el ancho que va tener el contenido, que se encuentra en nuestra etiqueta; no contemplará las medidas del margin, border y padding. Por lo tanto para calcular el ancho completo que va a tener un elemento, tenemos que sumar los valores del margin, border, padding y el contenido.</p>
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            <h4 id="outline">Outline y Textos</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                - Outline, es la línea que está fuera del borde y antes del margin. <br><br>
+                
+                Ejemplo 1: Se agregará estilo al div del punto anterior: <br><br>
+
+                .margen { <br>
+                    &nbsp;&nbsp;&nbsp;outline: 1px solid red; <br>
+                }
+            </p>
+
+            <p>
+                - Ejemplo 2: Se agregará un nuevo texto en un párrafo, con la clase 'class="text" ': <br><br>
+                < p > class="text">Esto es un texto < /p >
+            </p>
+            <p>
+                En css se agregarán las siguientes propiedades para el estilo de esa clase:<br>
+                <ul>
+                    <li>text-align: indicará donde se uticará el texto, las opciones son: center, left (opcion por defecto), rigth, justify (justificado). </li> <br>
+                    <li>text-decoration: Para decorar el texto, las opciones son: none (por defecto), underline (texto subrayado), line-through (texto tachado), overline (línea sobre el texto)</li> <br>
+                    <li>text-shadow: Efecto de sombra, el primer valor indicará cuánto se va a mover a la derecha (3px), el segundo valor indicará cuánto se va a mover hacia abajo (5px), el tercer valor es la cantidad de blur o difuminado del texto sombra (6px). </li><br>
+                    <li>font-family: Indicará la fuente con la cual se mostrará en el navegador, por lo general tiene más de un valor en el caso que no pueda mostrar, sigue con el siguiente.</li><br>
+                    
+                    Se pueden agregar fuentes desde <a href="https://fonts.google.com/" target="_blank">Google-fonts</a>, se elige la fuente; para este ejemplo fue 'pacifico'. Está la posibilidad de bajarla o añadirla como link en la cabecera o head con el siguiente código: <br><br>
+                    
+                    - Dentro de las etiquetas del head del HTML <br><br>
+                    < link rel="preconnect" href="https://fonts.googleapis.com"><br>
+                    < link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><br>
+                    < link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <br><br>
+                    
+                    - Dentro del CSS <br><br>
+
+                    &nbsp;&nbsp;&nbsp;font-family: 'Pacifico', cursive; <br><br>
+                    
+                    Como consejo no incluir muchas fuentes en línea, solo las que se utilizarán porque pueden hacer muy pesado el archivo html. <br>
+
+                </ul>
+            </p>
+            <p>
+                .text { <br>
+                    &nbsp;&nbsp;&nbsp;text-align: center; <br>
+                    &nbsp;&nbsp;&nbsp;text-decoration: underline; <br>
+                    &nbsp;&nbsp;&nbsp;text-shadow: 3px 5px blue; <br>
+                    &nbsp;&nbsp;&nbsp;text-shadow: 3px 5px 6px blue; <br>
+                    &nbsp;&nbsp;&nbsp;font-family: 'Courier New', Courier, monospace;<br>
+                    &nbsp;&nbsp;&nbsp;color: black;<br>
+                }
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            <h4 id="links">Links y Listas</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                <b>- Links:</b> Tienen cuatro estados.
+                <ul>
+                    <li>Cuando ha sido visitado.</li>
+                    <li>Cuando no ha sido visitado.</li>
+                    <li>Cuando pasamos por arriba del link.</li>
+                    <li>Cuando hacemos click o cuando es presionado (activado).</li>
+                </ul>
+                <p>
+                    Para que los colores de los estados anteriormente vean, se comentará en css la propiedad de color del selector universal ' * '.
+                </p>
+                <p>
+                    Ejemplo: <br> <br>
+                    - En html se agregará <br><br> 
+                    
+                    < a href="https://www.academia.holamundo.io">Academia Hola Mundo!< / a>
+                </p>
+                <p>
+                    - En CSS se agregará: <br><br>
+                    
+                    a:link { <br>
+                        &nbsp;&nbsp;&nbsp;color:blueviolet;<br>
+                    }<br><br>
+
+                    a:visited{<br>
+                        &nbsp;&nbsp;&nbsp;color: grey;<br>
+                    }<br><br>
+
+                    a:hover{<br>
+                        &nbsp;&nbsp;&nbsp;color: red;<br>
+                    }<br><br>
+
+                    a:active{<br>
+                        &nbsp;&nbsp;&nbsp;color:darkgreen;<br>
+                    }<br>
+                </p>
+                <p>
+                    Deben tener este mismo orden para que los estados funcionen. A estos selectores podemos agregarle todos los estilos aprendidos anteriormente.
+                </p>
+                <p>
+                    <b>- Listas</b>: Se puede agregar distintos tipos de estilos a esta etiqueta. <br><br>
+
+                    Ejemplo: se creará una lista no ordenada con tres elementos en HTML. <br><br>
+
+                    < p > <br>
+                        Ejemplo de lista con estilo, no ordenada:<br>
+                        &nbsp;&nbsp;< ul > <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;< li > Un < / li > <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;< li > Dos < / li > <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;< li > Tres < / li > <br>
+                        &nbsp;&nbsp;< / ul > <br>
+                    < / p > <br>
+                </p>
+                <p>
+                    En CSS se agregara: <br><br>
+                    ul { <br>
+                        &nbsp;&nbsp;&nbsp;background-color: aqua;<br>
+                        &nbsp;&nbsp;&nbsp;list-style-type: lower-roman; <br>
+                    }<br>
+                </p>
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            <h4 id="tablas">Tablas</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                Las tablas pueden contener todos los estilos empleados anteriormente, como ejemplo se creará una tabla con la cabecera nombre y apellido, y se agregarán tres filas. <br><br>
+
+                Para dar el estilo a la tabla en css se relizará lo siguiente:
+            </p>
+            <p>
+                - Estilo de la tabla <br><br>
+
+                table { <br>
+                    &nbsp;&nbsp;&nbsp;width: 100% ; (se adaptará al ancho completo de la página)<br>
+                    &nbsp;&nbsp;&nbsp;border-collapse: collapse ; (solo se vera un borde sin lineas separadas)<br>
+                }<br>
+            </p>
+            <p>
+                - Estilo a la fila cabecera y a las filas de contenido <br><br>
+
+                th, td { <br>
+                    &nbsp;&nbsp;&nbsp;border: solid 1px #eee;<br>
+                    &nbsp;&nbsp;&nbsp;padding: 5px ; (espacio para que el contenido no esté apegado al borde de la fila) <br>
+                }<br>
+            </p>
+            <p>
+                - Estilo a las filas de contenido que sean impar<br><br>
+
+                tr:nth-child(even) { <br>
+                    &nbsp;&nbsp;&nbsp;background-color:rgb(194, 194, 243); (cada fila impar tendrá el color indicado, para que sea mas agradable ver su contenido)<br>
+                }<br>
+            </p>
+            <p>
+                - Estilo a las filas cuando el mouse pase sobre ellas <br><br>
+
+                tr:hover {<br>
+                    &nbsp;&nbsp;&nbsp;background-color: #daeea3; (cada vez que pase el mouse cambiará toda la fila)<br>
+                    &nbsp;&nbsp;&nbsp;cursor: pointer; (cada vez que pase el mouse por las filas, cambiará de forma) <br>
+                }<br>
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            <h4 id="display">Display</h4><h5><a href="#indice">inicio</a></h5>
+            <p>
+                La propiedad de display nos va a indicar cómo vamos a colocar los elementos de html sobre nuestro documento.
+            </p>
+            <p>
+                Como ejemplo si agregamos dos etiquetas div (div1 y div2) y dos etiquetas span (span1 y span2), en un html, se verá que por defecto los div ocuparán todo el ancho del documento, por lo que el segundo div se mostrará abajo del primero. Cuando agregamos los span, quedan juntos.
+            </p>
+            <p>
+                Esto sucede porque div y span tienen valores de display distintos por defecto.
+            </p>
+            <p>
+                - Si agregamos el siguiente estilo a span<br><br>
+
+                span { <br>
+                    &nbsp;&nbsp;&nbsp; display: block; (hará que utlice todo el ancho de la pantalla, por lo tanto ahora el otro span quedará abajo del primero).<br>
+                }<br>
+            </p>
+            <p>
+                - Si agregamos una clase en las etiquetas div1 y div2 class="inline" en html y agregamos en css lo siguiente: <br><br>
+                
+                .inline { <br>
+                    &nbsp;&nbsp;&nbsp; display: inline; (hará que cada div utilice el espacio usado por el texto en su interior, por lo tanto quedarían una al lado de la otra).<br>
+                }<br>
+            </p>
+            <p>
+                Por lo tanto esto implica que los 'div' vienen con la propiedad display > block por defecto y los 'span' vienen con la propiedad de display > inline por defecto. Otras etiquetas que vienen con el display inline por defecto son links e imagenes.
+            </p>
+            <p>
+                - Para ocultar los span en css hay dos propiedades: <br><br>
+                
+                span { <br>
+                    &nbsp;&nbsp;&nbsp; display: none; <br>
+                }<br><br>
+
+                span { <br>
+                    &nbsp;&nbsp;&nbsp; visibility: hidden; <br>
+                }<br>
+            </p>
+            <p>
+                La diferencia es que display > none es como si comentara dicha etiqueta (es como si no estuvieran), mientras que visibility > hidden no se ven las etiquetas pero se pueden seleccionar con el mouse.
+            </p>
+            <p>
+                - La propiedad <b>max-width</b> tiene una característica muy particular, al darle un ancho específico (ej: 500px) este será su máximo valor. Si empiezo a achicar la pantalla el ancho se adaptará a ese tamaño. <br><br>
+                
+                &nbsp;&nbsp;Si utilizaramos solo width (ej: 500px), al achicar la pantalla empezaría agregar un scroll horizontal, dado que el ancho sería siempre el indicado.
+            </p>
+            <p>
+                - Para ver un ejemplo en html se creará un span con clase class="width" y otro span con clase class="max-width". En css se agregarán los siguientes estilos:
+            </p>
+            <p> 
+                span.width { <br>
+                    &nbsp;&nbsp;&nbsp; display: block; <br>
+                    &nbsp;&nbsp;&nbsp; width: 500px; <br>
+                    &nbsp;&nbsp;&nbsp; background-color: blue; <br>
+                }<br>
+            </p>
+            <p> 
+                span.max-width { <br>
+                    &nbsp;&nbsp;&nbsp; display: block; <br>
+                    &nbsp;&nbsp;&nbsp; max-width: 500px; <br>
+                    &nbsp;&nbsp;&nbsp; background-color: crimson; <br>
+                }<br>
+            </p>
+            <p>
+                Una vez creado las etiquetas con sus clases y css, al achicar la pantalla se puede ver claramente que max-width se adapta al tamaño de la pantalla al achicarse, y width queda con su valor estático.
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <p>
+            - La propiedad <b>Position</b> indicará la posición que tomarán todas las etiquetas en html. Su valor por defecto es static (para todas las etiquetas).
+        </p>
+        <p>
+            Como ejemplo se creará una etiqueta article en html, con el id="posicion". En css se creará lo siguiente: 
+        </p>
+        <p>
+            Position puede tener distintos valores: <br>
+            <ul>
+                <li>relative: Esto hace que la posicion sea relativa a lo que se ve en pantalla, por lo tanto al mover el scroll de la pantalla esta propiedad hace que la etiqueta se mueva también. <br><br>
+                
+                    #position { <br>
+                        &nbsp;&nbsp;&nbsp; position: relative; <br>
+                        &nbsp;&nbsp;&nbsp; left: 20px; <br>
+                    }<br><br>
+                </li>
+                <li>fixed: La posición es relativa al espacio que se está viendo, por lo tanto si se mueve la pantalla con el scroll la posición cambiará o se moverá según haga scroll.<br><br>
+
+                    #fixed { <br>
+                        &nbsp;&nbsp;&nbsp; position:fixed;<br>
+                        &nbsp;&nbsp;&nbsp; left: 20px;<br>
+                        &nbsp;&nbsp;&nbsp; top: 25px;<br>
+                        &nbsp;&nbsp;&nbsp; background-color: aquamarine;<br>
+                        &nbsp;&nbsp;&nbsp; font-size: 15px;<br>
+                    }<br><br>
+                </li>
+                <li>absolute: La posicion será relativa al elemento padre que este tenga. Si no hay un elemento padre, será del body del html <br><br>
+                
+                    #absolute { <br>
+                        &nbsp;&nbsp;&nbsp; position: absolute; <br>
+                        &nbsp;&nbsp;&nbsp; left: 20px; <br>
+                    }<br><br>
+                </li>
+                <li>sticky: La posicion una mezcla entre las propiedades fixed y relative <br><br>
+                
+                    #absolute { <br>
+                        &nbsp;&nbsp;&nbsp; position: absolute; <br>
+                        &nbsp;&nbsp;&nbsp; left: 20px; <br>
+                        &nbsp;&nbsp;&nbsp; top: 25px; <br>
+                    }<br><br>
+
+                </li>
+            </ul>
+        </p>
+        
+        <p>
+            <h4 id="inline_block">Inline Block</h4><h5><a href="#indice">inicio</a></h5>
+            <p>Por lo general se utiliza para realizar menús de navegación, dado que acepta las propiedades de alto y ancho; haciendo que se vea más uniforme la información.</p>
+            <p>Al contrario que la propiedad 'inline', esta no acepta las propiedades de alto y ancho.</p>
+            
+            <p><h5>¿Cómo centrar un elemento?</h5></p>
+            <p>Para centrar un elemento en HTML de forma horizontal, siempre tenemos que agregar un ancho menor al 100%, por ejemplo 200px.</p>
+            
+            <p>Como ejemplo se creará una estiqueta 'section' con la clase 'center', esta última es quien dará el estilo de dicha etiqueta. Dentro de la sección, se creará un párrafo con el texto 'Hola Mundo'.</p>
+            
+            <p>La hoja de estilos CSS quedará de la siguiente forma:</p>
+            <p>
+                <ul>
+                    <li>
+                        .centerHorizontal { <br>
+                            &nbsp;&nbsp;&nbsp; width: 200px; <br>
+                            &nbsp;&nbsp;&nbsp; margin: 0 auto; /* 0 para que no aparezca centrado verticalmente y auto para centrar horizontalmente */<br>
+                            &nbsp;&nbsp;&nbsp; background-color: aquamarine; <br>
+                            &nbsp;&nbsp;&nbsp; text-align: center; /* con esto centra el texto*/ <br>
+                        }<br>
+                    </li>
+                </ul>
+            </p>
+            <p>Para centra una etiqueta de forma Vertical (se agrega un padding), la hoja de estilos CSS quedará de la siguiente forma:</p>
+            <p>
+                <ul>
+                    <li>
+                        .centerVerical { <br>
+                            &nbsp;&nbsp;&nbsp; padding: 50px 0; <br>
+                            &nbsp;&nbsp;&nbsp; width: 200px; <br>
+                            &nbsp;&nbsp;&nbsp; margin: 0 auto; <br>
+                            &nbsp;&nbsp;&nbsp; background-color: aquamarine; <br>
+                            &nbsp;&nbsp;&nbsp; text-align: center; <br>
+                        }<br>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <a href="#indice">Volver a inicio</a>
+                <br><br>
+            </p>
+        </p>
+
+        <p>
+            <h4 id="float">Float</h4><h5><a href="#indice">inicio</a></h5>
+            <p>Propiedad que hace flotar los elementos de un HTML.</p>
+            <p>Para explicar esta propiedad, se relizarán tres ejemplos:</p>
+            <p>
+                <ol>
+                    <li>
+                        <p><u>Textos alineados hacia la izquierda</u></p>
+                        <p>
+                            En HTML se creará una etiqueta 'section' con la clase 'container', y dentro se añadirán dos 
+                            etiquetas 'article' una con la clase 'left', con texto 'texto hacia izquierda' y la otra 
+                            con la clase 'right', con texto 'texto hacia derecha'.
+                        </p>
+                        
+                        <p>En CSS se crearán los siguientes selectores:</p>
+                        <p>
+                            <ul>
+                                <li>
+                                    .left { <br>
+                                        &nbsp;&nbsp;&nbsp; float: left; <br>
+                                        &nbsp;&nbsp;&nbsp; width: 220px; <br>
+                                        &nbsp;&nbsp;&nbsp; border-style: solid; <br>
+                                        &nbsp;&nbsp;&nbsp; border-width: 1px; <br>
+                                    }<br>
+                                </li> <br>
+                                <li>
+                                    .right { <br>
+                                        &nbsp;&nbsp;&nbsp; float: right; <br>
+                                        &nbsp;&nbsp;&nbsp; width: 220px; <br>
+                                        &nbsp;&nbsp;&nbsp; border-style: solid; <br>
+                                        &nbsp;&nbsp;&nbsp; border-width: 1px; <br>
+                                    }<br>
+                                </li> <br>
+                                <li>
+                                    .container { <br>
+                                        &nbsp;&nbsp;&nbsp; height: right; <br>
+                                    }<br>
+                                </li>
+                            </ul>
+                        <p> 
+                            Lo que realizará cada selector es 'hacer flotar' hacia la la izquiera y derecha para 
+                            etiqueta 'article'. El selector 'container' se generó para que la etiqueta HTML 
+                            'section' tuviera una altura de 250px para que los ejemplos anteriores quedaran más abajo.
+                        </p>
+                    </p>
+                    </li>
+                    <li>
+                        <p><u>Imagen y textos alineados</u></p>
+                        <p>
+                            Se creará otro section, arriba del ejemplo anterior, que tendrá una imagen y texto. La nueva
+                            etiqueda de 'section' tendrá la clase 'container' en HTML y la imagen tendrá la clase "leftImg",
+                            En CSS quedará de la siguiente forma.
+                        </p>
+                        <p>
+                            <ul>
+                                <li>
+                                    .leftImg { <br>
+                                        &nbsp;&nbsp;&nbsp; float: right; <br>
+                                        &nbsp;&nbsp;&nbsp; width: 200px; <br>
+                                        &nbsp;&nbsp;&nbsp; height: 150px; <br>                                        
+                                    }<br>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            Esto hará que la imagen esté hacia la izquierda de la etiqueta section y el texto que está dentro
+                            de una etiqueda párrafo aparecerá hacia la derecha de la imagen.
+                        </p>
+                    </li>
+                    <li>
+                        <p><u>Números alineados hacia la derecha</u></p>
+                        <p>
+                            Nuevamente se creará un nuevo section, con la misma clase 'container', la cual tendrá tres etiquetas
+                            'article'. Cada 'article' tendrá la clase 'column right', aquí sucede algo bien interesante; al 
+                            tener la clase con las palabras 'column' y 'right', el estilo CSS va a tomar desde los dos selectores
+                            configurados en dicho archivo (desde 'rigth' y posteriormente de 'column').
+                        </p>
+                        <p>
+                            El estilo CSS que se muestra a continuación es:
+                        </p>
+                        <p>
+                            <ul>
+                                <li>
+                                    .column{ <br>
+                                        &nbsp;&nbsp;&nbsp; border: solid 1px #ddd;<br>
+                                        &nbsp;&nbsp;&nbsp; border-radius: 5px;<br>
+                                        &nbsp;&nbsp;&nbsp; margin: 0px 20px;<br>
+                                        &nbsp;&nbsp;&nbsp; padding: 10px 10px;<br>
+                                        &nbsp;&nbsp;&nbsp; text-align: center;<br>
+                                        &nbsp;&nbsp;&nbsp; background-color: #daeea3;<br>
+                                    }<br>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            Dejando los números alinedo hacia la derecha, gracias a la clase 'right' y cada número con un
+                            borde redondeado, color de fondo, entre otros, gracias a la clase 'column'.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+            <p><a href="#indice">Volver a inicio</a></p>
+        </p>
+        <br>
+        <p>
+            <h4 id="id_class">¿Cuándo usar selecto 'Id' o 'Class' en el etiquetado?</h4><h5><a href="#indice">inicio</a></h5>
+        </p>
+            El id que usas cuando defines una entidad conceptual de tu página, por ejemplo una lista de algo, 
+            o un pie de página o un menú de navegación. Algo de lo que generalmente sólo tienes uno, ya que otro no 
+            tendría sentido o sería otro tipo de entidad. Cuando se tiene un patrón de entidades que se repiten, o elementos 
+            que sirven para el mismo propósito, se tiende a asignarles una clase, piense en los encabezados de sección, 
+            las fotos de una galería, etc. <br><br>
+            
+            Así, a todos los elementos de la lista mencionada anteriormente se les asignaría el 
+            mismo nombre de clase. Tenga en cuenta, sin embargo, que sólo por razones de estilo que usted podría hacer con sólo 
+            las clases, nunca utilizar un único identificador, y estar perfectamente bien. No importa si su clase se utiliza una 
+            sola vez, o muchas veces.
+            <br><br>
+            - Fuente: https://stackoverflow.com/questions/6471272/when-to-use-class-selector-and-when-to-use-id-selector#6471285 <br><br>
+            - Traducido por: https://www.deepl.com/
+        </p>
+        <p>
+            ::: Fin del curso CSS :::
+        </p>
+    </p>
+</body>
+</html>

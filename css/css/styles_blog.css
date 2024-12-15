@@ -1,0 +1,104 @@
+/*
+Para agregar una fuente desde google, se debe seleccionar en 'google fonts' la preferida,
+para este ejemplo se seleccionaron montserrat 400 y 700. Después de seleccionarlas, 
+hay que hacer dos cosas:
+
+1.- Añadir código indicado en google fonts, en el head del archivo HTML que queramos 
+    añadir. Este debe ir antes de donde llamamos al archivo de estilos de dicha página.
+
+2.- Añadir al inicio del archivo CSS, el siguiente código a un selector:
+
+font-family: 'Montserrat', sans-serif;
+
+*/
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: #e0e0e0;
+}
+
+header{
+    background-color: #364552;
+    color: white;
+    padding: 3rem 2rem;
+}
+
+header h1{
+    font-size: 4rem;
+    text-align: center;
+}
+header a {
+    transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:hover{
+    color: cornflowerblue;
+}
+.containerHeader{
+    margin: 0 auto;
+    width: 100px;
+}
+/* Este selector va a centrar a la estiqueta que lo use*/
+.container{
+    width: 400px; /* que corresponde al mismo ancho de las imagenes mostradas*/
+    margin: 0 auto; /* con esta opción se centra todo */
+}
+
+/* estilo etiquetas article, que esten dentro de section */
+section article{
+    /*transition se utiliza para efectuar algun efecto con un tiempo de ejecución, en este caso es para box-shadow de 'section article:hover', y usando el algoritmo ease (hay más efectos)*/
+    transition: box-shadow 0.3s ease; /* se agrega después de agregar la opcion box-shadow en 'section article:hover'. Da un efecto de sombra con un tiempo de aplicación*/
+    background-color: #fff;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0; /* se da un valor vertical 0.25rem y no un horizontal para que la img no quede hacia la derecha*/
+}
+
+/* Esto es para que los títulos h2 y p, dentro de section y article, se vean levemente hacia la derecha*/
+section article h2, p{
+    margin: 1rem
+}
+
+/* efecto sombra de los articles*/
+section article:hover{
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+/* Estilo al footer */
+footer{
+    background-color: #222;
+    padding: 3rem;
+    color: #fff; 
+}
+
+footer section{
+    float: right;
+}
+
+/* Los párrafos por defecto tienen un margen asignado, por lo tanto
+cuando a la sección de links, se desplazan a la derecha, 
+quedan deslineados con los párrados, por lo tanto quedarán con
+un margen=0 y con un display inline, por si hay más de un texto
+queden en la misma línea.
+*/
+footer p{
+    margin: 0;
+    display:inline;
+}
+
+footer a {
+    /* Hace que el color de un link caparezca en 0.3 segundos, con el efecto 'ease' */
+    transition: color 0.3s ease; 
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: cornflowerblue;
+}
